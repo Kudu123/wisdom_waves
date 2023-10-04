@@ -1,0 +1,151 @@
+body{
+
+}
+
+.book {
+    transition: opacity 0.4s 0.2s;
+  }
+  p{
+
+    text-align: center;
+    font-size: 33px;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000000;
+  }
+  .page {
+    width: 40vw;
+    height: 55vw;
+    float: left;
+    margin-bottom: 0.5em;
+    background: top no-repeat;
+    background-size: cover;
+  }
+  .page:nth-child(even) {
+    clear: both;
+  }
+  .book {
+    perspective: 250vw;
+  
+  }
+.country{
+    width: 90%;
+   
+    margin-left: 5%;
+}
+
+  .book .pages {
+    width: 80vw;
+    height: 55vw;
+  
+    position: relative;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 4px;
+  }
+  .book .page {
+    float: none;
+    clear: none;
+    margin: 0;
+    position: absolute;
+   
+    top: 0;
+    width: 40vw;
+    height: 55vw;
+    transform-origin: 0 0;
+    transition: transform 1.4s;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+    background-color: #ffffff;
+  }
+  .book .page:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-style: solid;
+    border-color: rgb(47, 46, 46);
+    left: 0;
+    right: 0;
+    transition: background 0.7s;
+    z-index: 2;
+  }
+  .book .page:nth-child(odd) {
+    pointer-events: all;
+    transform: rotateY(0deg);
+    right: 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .book .page:nth-child(odd):hover {
+    transform: rotateY(-15deg);
+  }
+  .book .page:nth-child(odd):hover:before {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  .book .page:nth-child(odd):before {
+    background: rgba(0, 0, 0, 0);
+  }
+  .book .page:nth-child(even) {
+    pointer-events: none;
+    transform: rotateY(180deg);
+    transform-origin: 100% 0;
+    left: 0;
+    border-radius: 4px 0 0 4px;
+    border-color: black;
+  }
+  .book .page:nth-child(even):before {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .book .page.grabbing {
+    transition: none;
+  }
+  .book .page.flipped:nth-child(odd) {
+    pointer-events: none;
+    transform: rotateY(-180deg);
+  }
+  .book .page.flipped:nth-child(odd):before {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .book .page.flipped:nth-child(even) {
+    pointer-events: all;
+    transform: rotateY(0deg);
+  }
+  .book .page.flipped:nth-child(even):hover {
+    transform: rotateY(15deg);
+  }
+  .book .page.flipped:nth-child(even):hover:before {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  .book .page.flipped:nth-child(even):before {
+    background: rgba(0, 0, 0, 0);
+  }
+  *,
+  * :before,
+  *:after {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+   background-repeat: no-repeat;
+ 
+  }
+  html {
+    height: 100%;
+  }
+  body {
+background-image: url(blogger1.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    line-height: 1.5em;
+    background-color: #000000;
+    color: #000000;
+  }
+  .page:nth-child(odd){
+    background-position: right top;
+  }
+  
