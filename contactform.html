@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/icomoon/style.css">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<link rel="stylesheet" href="contactform.css">
+<title>Contact Form #6</title>
+<script nonce="b9f0d097-aa03-4990-8e6d-57f908920e7e">(function(w,d){!function(a,b,c,d){a[c]=a[c]||{};a[c].executed=[];a.zaraz={deferred:[],listeners:[]};a.zaraz.q=[];a.zaraz._f=function(e){return async function(){var f=Array.prototype.slice.call(arguments);a.zaraz.q.push({m:e,a:f})}};for(const g of["track","set","debug"])a.zaraz[g]=a.zaraz._f(g);a.zaraz.init=()=>{var h=b.getElementsByTagName(d)[0],i=b.createElement(d),j=b.getElementsByTagName("title")[0];j&&(a[c].t=b.getElementsByTagName("title")[0].text);a[c].x=Math.random();a[c].w=a.screen.width;a[c].h=a.screen.height;a[c].j=a.innerHeight;a[c].e=a.innerWidth;a[c].l=a.location.href;a[c].r=b.referrer;a[c].k=a.screen.colorDepth;a[c].n=b.characterSet;a[c].o=(new Date).getTimezoneOffset();if(a.dataLayer)for(const n of Object.entries(Object.entries(dataLayer).reduce(((o,p)=>({...o[1],...p[1]})),{})))zaraz.set(n[0],n[1],{scope:"page"});a[c].q=[];for(;a.zaraz.q.length;){const q=a.zaraz.q.shift();a[c].q.push(q)}i.defer=!0;for(const r of[localStorage,sessionStorage])Object.keys(r||{}).filter((t=>t.startsWith("_zaraz_"))).forEach((s=>{try{a[c]["z_"+s.slice(7)]=JSON.parse(r.getItem(s))}catch{a[c]["z_"+s.slice(7)]=r.getItem(s)}}));i.referrerPolicy="origin";i.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(a[c])));h.parentNode.insertBefore(i,h)};["complete","interactive"].includes(b.readyState)?zaraz.init():a.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body>
+    <div class="harr">
+    <h1>Blog</h1>
+
+  </div>
+  <div class="naavbar">
+
+    <a href="index.html">HOME </a>
+    <a href="blogfull.html">BLOG</a>
+
+
+  </div>
+  </div>
+  </nav>
+
+
+
+<div class="content">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-10">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<h3 class="heading mb-4">Let's talk about everything!</h3>
+<p>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+<p><img src="undraw-contact.svg" alt="Image" class="img-fluid"></p>
+</div>
+<div class="col-md-6">
+    <form class="mb-5" method="post" id="contactForm" name="submit-to-google-sheet" onsubmit="return validateForm()">
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <input type="text" class="form-control" name="Name" id="name" placeholder="Your Name">
+      <span id="nameError" class="error"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <input type="text" class="form-control" name="Email" id="email" placeholder="Your Email">
+      <span id="emailError" class="error"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <textarea class="form-control" name="Message" id="message" cols="30" rows="7" placeholder="Your message"></textarea>
+      <span id="messageError" class="error"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <input type="submit" value="Send Message" class="btn btn2" style="background-color: rgb(0, 0, 0); color: rgb(209, 209, 209);">
+      <span class="submit"></span>
+    </div>
+  </div>
+</form>
+<span id="msg" style="color: rgb(18, 221, 0);"></span>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzw5gf8l9GN1qVc4dSyp3UDl-jk63puYt6h2DzcOFSeJ09WYOcByUHSA1bD0mkLAfG6tw/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  const msg = document.getElementById("msg");
+
+  function validateForm() {
+    // Reset error messages
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("messageError").textContent = "";
+
+    // Get form input values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Validate Name (required)
+    if (name.trim() === "") {
+      document.getElementById("nameError").textContent = "Name is required.";
+      return false;
+    }
+
+    // Validate Email (required and valid format)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.trim() === "") {
+      document.getElementById("emailError").textContent = "Email is required.";
+      return false;
+    } else if (!email.match(emailPattern)) {
+      document.getElementById("emailError").textContent = "Invalid email format.";
+      return false;
+    }
+
+    // Validate Message (required)
+    if (message.trim() === "") {
+      document.getElementById("messageError").textContent = "Message is required.";
+      return false;
+    }
+
+    // Form is valid, proceed with submission
+    return true;
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (validateForm()) {
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          msg.innerHTML = "Message sent successfully";
+          setTimeout(function () {
+            msg.innerHTML = "";
+          }, 5000);
+          form.reset();
+        })
+        .catch(error => console.error('Error!', error.message));
+    }
+  });
+</script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"811e70edea371194","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.8.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
