@@ -18,12 +18,12 @@
   text-decoration: none;
 }
 .harr h1 {
+  color: rgb(0, 0, 0);
+  font-size: 37px;
+  margin-left: 90%;
+  margin-top: -0.5%;
+  position: absolute;
 
-    color: rgb(0, 0, 0);
-    font-size: 37px;
-    margin-left: 90%;
-    margin-top: -0.5%;
-    position: absolute;
 }
 nav{
   background-color: rgb(220, 220, 220);
@@ -176,3 +176,7 @@ a {
       color: #dd4d5a; }
   .footer-16371 .copyright {
     color: #999999; }
+
+    p.test{
+      border-bottom: 6px solid grey;
+    }
