@@ -25,6 +25,9 @@
   position: absolute;
 
 }
+@media screen (){
+  
+}
 nav{
   background-color: rgb(220, 220, 220);
   width: 100%;
@@ -176,7 +179,3 @@ a {
       color: #dd4d5a; }
   .footer-16371 .copyright {
     color: #999999; }
-
-    p.test{
-      border-bottom: 6px solid grey;
-    }
