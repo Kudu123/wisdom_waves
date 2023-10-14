@@ -25,15 +25,7 @@
     position: absolute;
   
   }
- @media only screen and (max-width: 400px) {
-  .harr h1 {
-    color: rgb(0, 0, 0);
-    font-size: 37px;
-    margin-left: 80%;
-    margin-top: -0.5%;
-    position: absolute;
-    }
-  }
+ 
   nav{
     background-color: rgb(220, 220, 220);
     width: 100%;
