@@ -157,7 +157,14 @@ a {
 
 .footer-16371 {
   padding: 3rem 0;
-  font-family: "Poppins", sans-serif; }
+  font-family: "Poppins", sans-serif;
+margin-left: -100%; }
+
+@media only screen and (max-width:768px) {
+  .footer-16371{
+    margin-left: 0%;
+  }
+}
   .footer-16371 .footer-site-logo {
     text-align: center;
     font-size: 2rem;
